@@ -1,4 +1,4 @@
-name: This python repo
+name: Python repo workflow
 
 on: [push]
 
