@@ -25,8 +25,8 @@ def lambda_handler(event, _):
     if "authorization" in request["headers"]:
         value = request["headers"].get("authorization")[0]["value"]
 
-        auth_user = b"hello"
-        auth_pass = b"world"
+        auth_user = b"this"
+        auth_pass = b"password"
         auth_string = "Basic " + base64.b64encode(auth_user + b":" + auth_pass).decode("utf8")
 
         # If the authorization header is valid, forward the
