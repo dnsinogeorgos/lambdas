@@ -54,7 +54,7 @@ class TestLambdaHandler(unittest.TestCase):
         '''
         request = event["Records"][0]["cf"]["request"]
         request["headers"]["authorization"] = [{
-            "value": "Basic aGVsbG86d29ybGQ="
+            "value": "Basic dGhpczpwYXNzd29yZA=="
         }]
         result = lambda_handler(event, None)
         self.assertEqual(result, request)
