@@ -1,17 +1,29 @@
 # lambdas
 
-terraform/aws/python experimentation  
-CF frontend with S3 origin (OAI)
+python functions for aws lambda  
 
-currently viewer_request checks for basic HTTP auth
+### edge functions:
+a set of functions, intended for cloudfront distributions  
 
-goals:  
-1 stateless authentication (dynamodb)  
-2 authentication with azureAD  
-3 authentication with cognito  
-4 authentication with github/google etc  
-5 user signup and authentication with cognito  
-6 user signup with cognito for existing azureAD users
+##### origin_requests
+```
+This function appends index.html to all request URIs with a trailing
+slash. Intended to work around the S3 Origins for Cloudfront, that use
+Origin Access Identity.
+```
 
+##### origin_response
+```python
+This function injects security headers to origin responses.
+In case of 404, it conditionally redirects to request URI
+appended with /.
+```
+
+##### viewer_request
+```python
+This function implements Basic HTTP authentication.
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate
+```
 
 ![Python repo workflow](https://github.com/dnsinogeorgos/lambdas/workflows/Python%20repo%20workflow/badge.svg?branch=main)
