@@ -1,8 +1,10 @@
-'''
+"""
 This function appends index.html to all request URIs with a trailing
 slash. Intended to work around the S3 Origins for Cloudfront, that use
 Origin Access Identity.
-'''
+"""
+
+
 def lambda_handler(event, _):
     request = event["Records"][0]["cf"]["request"]
     old_uri = request["uri"]

@@ -6,7 +6,8 @@ install:
 		venv/bin/pip install -r requirements.txt
 
 lint:
-	venv/bin/pylint --disable=R *.py
+	venv/bin/pylint --disable=R *.py && \
+		venv/bin/flake8 --max-line-length 88 *.py
 
 test:
 	venv/bin/coverage run -m unittest *_test.py && \
