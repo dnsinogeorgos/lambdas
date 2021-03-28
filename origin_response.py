@@ -6,7 +6,7 @@ appended with /.
 import re
 
 
-def lambda_handler(event, _):
+def lambda_handler(event, _):  # pylint: disable=C0116
     request = event["Records"][0]["cf"]["request"]
     response = event["Records"][0]["cf"]["response"]
     headers = response["headers"]

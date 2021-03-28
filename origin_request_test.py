@@ -1,3 +1,4 @@
+# pylint: disable=C0114
 import unittest
 
 from origin_request import lambda_handler
@@ -6,7 +7,7 @@ from origin_request import lambda_handler
 event = {"Records": [{"cf": {"request": {"uri": ""}}}]}
 
 
-class TestLambdaHandler(unittest.TestCase):
+class TestLambdaHandler(unittest.TestCase):  # pylint: disable=C0115
     def test_no_slash(self):
         """
         This requests a URI without a trailing slash and no file extension

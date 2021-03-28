@@ -6,7 +6,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate
 import base64
 
 
-def lambda_handler(event, _):
+def lambda_handler(event, _):  # pylint: disable=C0116
     request = event["Records"][0]["cf"]["request"]
 
     # Prepare a Basic HTTP auth response

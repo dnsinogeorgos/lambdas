@@ -1,3 +1,4 @@
+# pylint: disable=C0114
 import unittest
 
 from viewer_request import lambda_handler
@@ -13,7 +14,7 @@ response = {
 }
 
 
-class TestLambdaHandler(unittest.TestCase):
+class TestLambdaHandler(unittest.TestCase):  # pylint: disable=C0115
     def test_no_auth(self):
         """
         This sends a request event without an authentication header

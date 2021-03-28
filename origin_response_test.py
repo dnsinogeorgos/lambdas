@@ -1,3 +1,4 @@
+# pylint: disable=C0114
 import unittest
 
 from origin_response import lambda_handler
@@ -16,7 +17,7 @@ event = {
 }
 
 
-class TestLambdaHandler(unittest.TestCase):
+class TestLambdaHandler(unittest.TestCase):  # pylint: disable=C0115
     def test_success(self):
         """
         This sends a success response
@@ -51,7 +52,7 @@ class TestLambdaHandler(unittest.TestCase):
         ]
         headers["content-security-policy"] = [
             {
-                "value": "default-src 'self' https://*.everypay.gr:443; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.everypay.gr:443 http://www.google-analytics.com https://www.google-analytics.com https://ssl.google-analytics.com http://html5shim.googlecode.com https://html5shim.googlecode.com https://ajax.googleapis.com https://netdna.bootstrapcdn.com https://code.jquery.com https://*.doubleclick.net https://www.googletagmanager.com https://connect.facebook.net; img-src 'self' data: https://*.everypay.gr:443 http://www.google-analytics.com https://www.google-analytics.com https://ssl.google-analytics.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.everypay.gr:443 https://fonts.googleapis.com; font-src 'self' https://*.everypay.gr:443 https://themes.googleusercontent.com https://fonts.gstatic.com; frame-src 'self' https://*; object-src 'self' https://*.everypay.gr:443"  # noqa: E501
+                "value": "default-src 'self' https://*.everypay.gr:443; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.everypay.gr:443 http://www.google-analytics.com https://www.google-analytics.com https://ssl.google-analytics.com http://html5shim.googlecode.com https://html5shim.googlecode.com https://ajax.googleapis.com https://netdna.bootstrapcdn.com https://code.jquery.com https://*.doubleclick.net https://www.googletagmanager.com https://connect.facebook.net; img-src 'self' data: https://*.everypay.gr:443 http://www.google-analytics.com https://www.google-analytics.com https://ssl.google-analytics.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.everypay.gr:443 https://fonts.googleapis.com; font-src 'self' https://*.everypay.gr:443 https://themes.googleusercontent.com https://fonts.gstatic.com; frame-src 'self' https://*; object-src 'self' https://*.everypay.gr:443"  # pylint: disable=C0301  # noqa: E501
             }
         ]
         headers["x-content-type-options"] = [{"value": "nosniff"}]
@@ -76,7 +77,7 @@ class TestLambdaHandler(unittest.TestCase):
         ]
         headers["content-security-policy"] = [
             {
-                "value": "default-src 'self' https://*.everypay.gr:443; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.everypay.gr:443 http://www.google-analytics.com https://www.google-analytics.com https://ssl.google-analytics.com http://html5shim.googlecode.com https://html5shim.googlecode.com https://ajax.googleapis.com https://netdna.bootstrapcdn.com https://code.jquery.com https://*.doubleclick.net https://www.googletagmanager.com https://connect.facebook.net; img-src 'self' data: https://*.everypay.gr:443 http://www.google-analytics.com https://www.google-analytics.com https://ssl.google-analytics.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.everypay.gr:443 https://fonts.googleapis.com; font-src 'self' https://*.everypay.gr:443 https://themes.googleusercontent.com https://fonts.gstatic.com; frame-src 'self' https://*; object-src 'self' https://*.everypay.gr:443"  # noqa: E501
+                "value": "default-src 'self' https://*.everypay.gr:443; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.everypay.gr:443 http://www.google-analytics.com https://www.google-analytics.com https://ssl.google-analytics.com http://html5shim.googlecode.com https://html5shim.googlecode.com https://ajax.googleapis.com https://netdna.bootstrapcdn.com https://code.jquery.com https://*.doubleclick.net https://www.googletagmanager.com https://connect.facebook.net; img-src 'self' data: https://*.everypay.gr:443 http://www.google-analytics.com https://www.google-analytics.com https://ssl.google-analytics.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.everypay.gr:443 https://fonts.googleapis.com; font-src 'self' https://*.everypay.gr:443 https://themes.googleusercontent.com https://fonts.gstatic.com; frame-src 'self' https://*; object-src 'self' https://*.everypay.gr:443"  # pylint: disable=C0301  # noqa: E501
             }
         ]
         headers["x-content-type-options"] = [{"value": "nosniff"}]

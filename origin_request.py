@@ -5,7 +5,7 @@ Origin Access Identity.
 """
 
 
-def lambda_handler(event, _):
+def lambda_handler(event, _):  # pylint: disable=C0116
     request = event["Records"][0]["cf"]["request"]
     old_uri = request["uri"]
 
